@@ -1,0 +1,65 @@
+.img1{
+    width: 65%;
+    position: relative;
+    top: 30px;
+    left: 90px;
+}
+
+
+.containers{
+    width: 500px;
+    height: 500px;
+    background-color: white ;
+    position: relative;
+    top: 100px;
+    left:300px;
+    border-radius: 20px;
+}
+
+.h1{
+    color: #000;
+    position: relative;
+    top: 35px;
+    left: 90px;
+
+}
+
+.profile{
+    position: relative;
+    left: 20px;
+}
+
+.b1:hover{
+    opacity: 0.8;
+}
+
+.b1{
+    background: var(--color-primary);
+    color: white;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+    width: 80px;
+    height: 40px;
+    position: relative;
+    bottom: 300px;
+    left: 920px;
+}
+
+.b2{
+    background: var(--color-primary);
+    color: white;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+    width: 80px;
+    height: 40px;
+    /* margin-left: 800px; */
+    position: relative;
+    bottom: 300px;
+    left: 900px;
+}
