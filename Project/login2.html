@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body style="background-color: hsl(252, 30%, 95% );">
+    <div class="main">
+        <h1>Please Sign In</h1>
+        <form action="/api/auth/login" method="post">
+            <div class="email">
+                <label style="margin-right: 470px;">Email:</label><br>
+            <input type="email" name="username" id="username"><br>
+            </div>
+            <div class="pass">
+                <label style="margin-right: 450px;">Password:</label><br>
+            <input type="password" name="password" id="password">
+            </div>
+            <br>
+            <div class="btn">
+                <button type="submit">LOGIN</button>
+            </div>
+            <h3>Don't have an account ? <a href="login.html">sign up</a></h3>
+        </form>
+    </div>
+
+    <style>
+        .main{
+            position: relative;
+            top: 150px;
+            left: 450px;
+            width: 40%;
+            height: 50%;
+            text-align: center;
+            background-color: white;
+            position: fixed;
+            
+        }
+        .email{
+            margin-top: 40px;
+            
+        }
+        .pass{
+            margin-top: 20px;
+        }
+        #username{
+            width: 85%;
+            height: 30px;
+            /* border-radius: 20px; */
+            /* margin-top: 100px; */
+        }
+        #password{
+            width: 85%;
+            height: 30px;
+            /* border-radius: 20px; */
+            /* margin-top: 50px; */
+        }
+        button{
+            width: 20%;
+            height: 40px;
+            margin-top: 10px;
+            background-color: hsl(252, 75%, 60%);
+            color: white;
+            font-size: 1rem;
+            border: none;
+        }
+    </style>
+</body>
+</html>

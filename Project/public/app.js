@@ -252,3 +252,5 @@ document.getElementById("myStory").addEventListener("click", function() {
 document.getElementById("myMessage").addEventListener("click", function() {
     window.location.href = "/message.html";
 });
+
+

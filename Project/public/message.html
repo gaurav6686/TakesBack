@@ -102,11 +102,30 @@
                                                                                                                                                                 
     <div class="chat">
         <div class="person">
-            <!-- <img src="\images\profile.png.jpg"> 
-        </div> -->
-        <input type="text" class="text">
-        <button>send</button>
+        
     </div>
+    <ul class="message-container" id="message-container">
+        <li class="message-left">
+            <p class="message">
+                hii how are you
+            </p>
+        </li>
+
+        <li class="message-right">
+            <p class="message">
+                hii how are you
+            </p>
+        </li>
+    </ul>
+    <form class="message-form" id="message-form">
+        <input type="text" class="text" name="message" id="message-input">
+        <button>send</button>
+    </form>
+    
+</div>
+
+    <script src="/socket.io/socket.io.js"></script>  
+    <script src="main.js"></script>
      <script src="app.js"></script>
 </body>
 </html>

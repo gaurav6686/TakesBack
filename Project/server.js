@@ -1,19 +1,23 @@
   const express = require('express')
-  const path = require('path')
-  const multer = require('multer')
   const mongoose = require('mongoose')
   const bodyparser = require('body-parser')
   const cloudinary = require('cloudinary').v2;
   const fileUpload = require('express-fileupload')
-  
-//======================ALL Models imported=================================================
-
+  const path = require('path')
   const app = express()
+  app.use(express.json())
+
+//======================ALL Models imported=================================================
+ 
+  app.use(express.static(path.join(__dirname,'public')))
   app.use(express.static('public'));
-  app.use(bodyparser.urlencoded({extended:false}));
+  app.use(bodyparser.urlencoded({extended:true}));
+  
+  app.use("/api/auth", require("./Auth/route"))
 
   app.set('views', './views')
   app.set('view engine', 'ejs')
+  
 
   //=====================Connection to mongodb==================================================
 
@@ -88,6 +92,7 @@ const Image = mongoose.model('Image', imageSchema);
     res.render('index', { imageUrls });
   });
   
+  
   //=====================Uploading Image==================================================
 
   app.get('/getupload', (req, res) => {
@@ -107,12 +112,42 @@ const Image = mongoose.model('Image', imageSchema);
       res.sendFile(__dirname + "/upload.html");
   })
 
+  //=======================================================================
 
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/login.html");
+    
+})
+
+app.get("/login2", (req, res) => {
+  res.sendFile(__dirname + "/login2.html");
+})
+ 
+   
+//=========================SERVER-CONNECTION========================================
   
-  
-  app.listen(3000, () => {
-    console.log(`server running`)
+const PORT = process.env.PORT || 3000
+const server = app.listen(PORT, ()=>
+    console.log(`server is connected to port ${PORT}`)
+)
+
+
+//=========================SOCKET=============================
+
+const io = require('socket.io')(server)
+
+function onConnected(socket){
+  // console.log(socket.id);
+
+  socket.on('message',(data)=>{
+    // console.log(data)
+    socket.broadcast.emit('chat-message',data)
   })
+}
+
+io.on('connection',onConnected)
+
+
 
 
 
